@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ReportGenerator": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

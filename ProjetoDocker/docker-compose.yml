@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  sender:
+    build:
+      context: ./RabbitSender
+      dockerfile: Dockerfile
+    container_name: rabbit_sender
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+
+  generator:
+    build:
+      context: ./ReportGenerator
+      dockerfile: Dockerfile
+      args:
+      - DEVEXPRESS_NUGET_KEY=asFla4orZttL8GISX9uH7mhFibqgX7WbghdxGUIBVLzCAfpYPO
+    container_name: rabbit_generator
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\RabbitSender",
+    "\\RabbitSender\\Models",
+    "\\RabbitSender\\Services",
+    "\\ReportGenerator",
+    "\\ReportGenerator\\Reports",
+    "\\ReportGenerator\\Services"
+  ],
+  "SelectedNode": "\\RabbitSender\\Services\\RabbitMQSenderService.cs",
+  "PreviewInSolutionExplorer": false
+}
